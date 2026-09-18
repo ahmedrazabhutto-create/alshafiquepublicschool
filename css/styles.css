@@ -1,0 +1,120 @@
+/* Custom styles for Alshafique SMS */
+:root {
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+/* Sidebar scrollbar */
+#sidebar-nav::-webkit-scrollbar { width: 4px; }
+#sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+#sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+
+/* Smooth page transitions */
+.page-enter { animation: fadeIn 0.25s ease-out; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.stat-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Tables */
+.data-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+.data-table tr:hover td {
+  background: #f1f5f9;
+}
+
+/* Modal */
+.modal-backdrop {
+  animation: fadeIn 0.2s ease-out;
+}
+.modal-content {
+  animation: slideUp 0.25s ease-out;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Toast */
+.toast {
+  animation: slideInRight 0.3s ease-out;
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Status badges */
+.badge-present { background: #dcfce7; color: #166534; }
+.badge-absent { background: #fee2e2; color: #991b1b; }
+.badge-late { background: #fef3c7; color: #92400e; }
+.badge-leave { background: #e0e7ff; color: #3730a3; }
+.badge-paid { background: #dcfce7; color: #166534; }
+.badge-pending { background: #fef3c7; color: #92400e; }
+.badge-active { background: #dcfce7; color: #166534; }
+.badge-inactive { background: #f1f5f9; color: #64748b; }
+
+/* Print styles */
+@media print {
+  #sidebar, header, footer, #menu-toggle, .no-print { display: none !important; }
+  #app { display: block !important; }
+  .lg\:ml-64 { margin-left: 0 !important; }
+  main { padding: 0 !important; }
+}
+
+/* Form focus */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  ring: 2px;
+}
+
+/* Custom checkbox/radio */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #2563eb;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Sidebar active link */
+.nav-link.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-weight: 600;
+}
+.nav-link:hover:not(.active) {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Responsive table wrapper */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
